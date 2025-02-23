@@ -28,6 +28,7 @@ function Home() {
         e.preventDefault()
         console.log(window.grocery_list)
         let order = window.grocery_list
+        print(localStorage.getItem("authToken"))
         if (localStorage.getItem("authToken")){        
             if (order.length != 0){
                 let result = await fetch("https://grocery-list-luu3.onrender.com/api/mylist", {
@@ -91,16 +92,18 @@ function Home() {
 
     
     const loadData = async () =>{
-        let response = await fetch("https://grocery-list-luu3.onrender.com/api/item_list",{
-            method:"POST",
-            headers:{
-                "Content-Type":'application/json'
-            }
-        })
-        response  = await response.json();
-        // console.log(response[0],response[1])
-        setItem_List(response[0])
-        setCategory_List(response[1])
+        if (localStorage.getItem("authToken")){
+            let response = await fetch("https://grocery-list-luu3.onrender.com/api/item_list",{
+                method:"POST",
+                headers:{
+                    "Content-Type":'application/json'
+                }
+            })
+            response  = await response.json();
+            // console.log(response[0],response[1])
+            setItem_List(response[0])
+            setCategory_List(response[1])
+        }
     }
 
     useEffect(()=>{
