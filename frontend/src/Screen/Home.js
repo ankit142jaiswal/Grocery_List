@@ -28,7 +28,7 @@ function Home() {
         e.preventDefault()
         console.log(window.grocery_list)
         let order = window.grocery_list
-        print(localStorage.getItem("authToken"))
+        console.log(localStorage.getItem("authToken"))
         if (localStorage.getItem("authToken")){        
             if (order.length != 0){
                 let result = await fetch("https://grocery-list-luu3.onrender.com/api/mylist", {
