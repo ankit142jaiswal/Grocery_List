@@ -1,0 +1,24 @@
+{
+    "category":[
+        {"category_name": "Fruit"},
+        {"category_name": "Vegetable"},
+        {"category_name": "Dairy"},
+        {"category_name": "Meat"},
+        {"category_name": "Seafood"},
+        {"category_name": "Grain"},
+        {"category_name": "Canned"},
+        {"category_name": "Packaged"},
+        {"category_name": "Baking"},
+        {"category_name": "Cooking"},
+        {"category_name": "Spice"},
+        {"category_name": "Frozen"},
+        {"category_name": "Snack"},
+        {"category_name": "Sweet"},
+        {"category_name": "Beverage"},
+        {"category_name": "Household"},
+        {"category_name": "Cleaning"},
+        {"category_name": "Personal Care"},
+        {"category_name": "Condiment"}
+      ]
+    
+}
