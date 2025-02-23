@@ -28,7 +28,7 @@ function Home() {
         e.preventDefault()
         console.log(window.grocery_list)
         let order = window.grocery_list
-        if (localStorage.getItem('authToken')){        
+        if (localStorage.getItem("authToken")){        
             if (order.length != 0){
                 let result = await fetch("https://grocery-list-luu3.onrender.com/api/mylist", {
                 method: "POST",
@@ -41,8 +41,7 @@ function Home() {
             console.log(data)
             if (!data.success) {
                 window.alert("Something Went Wrong !!")
-            }
-            
+            }            
             if (data.success) {
                 window.alert("Grocery List Created Successfully !!")
                 navigate('/grocerylist')
