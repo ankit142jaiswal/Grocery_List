@@ -14,7 +14,7 @@ function Signup() {
     const collectData = async (e) => {
         e.preventDefault();
         console.log(name, password,password1, email);
-        let result = await fetch("http://localhost:5000/api/createuser", {
+        let result = await fetch("https://grocery-list-luu3.onrender.com/api/createuser", {
             method: 'POST',
             body: JSON.stringify({ name, email, password, password1 }),
             headers: {

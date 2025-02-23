@@ -31,8 +31,6 @@ const handleLogout = ()=>{
 
       </ul>
       {(!localStorage.getItem("authToken"))?
-      
-
       <div className="d-flex ">
         <Link className="btn btn-success mx-1" type="submit" to='/login' >Login</Link>
         <Link className="btn btn-success mx-1" type="submit" to='/signup' >Signup</Link>

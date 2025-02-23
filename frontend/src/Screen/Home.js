@@ -23,38 +23,39 @@ function Home() {
         console.log(window.categorised_item)
        
     }
-        
-
-
-   
-
+    
     const saveList= async(e)=>{
         e.preventDefault()
         console.log(window.grocery_list)
         let order = window.grocery_list
-        if (order.length != 0){
-            let result = await fetch("http://localhost:5000/api/mylist", {
-            method: "POST",
-            body: JSON.stringify({order}),
-            headers: {
-                "Content-Type": "application/json"
+        if (localStorage.getItem('authToken')){        
+            if (order.length != 0){
+                let result = await fetch("https://grocery-list-luu3.onrender.com/api/mylist", {
+                method: "POST",
+                body: JSON.stringify({order}),
+                headers: {
+                    "Content-Type": "application/json"
+                }
+            });
+            const data = await result.json();
+            console.log(data)
+            if (!data.success) {
+                window.alert("Something Went Wrong !!")
             }
-        });
-        const data = await result.json();
-        console.log(data)
-        if (!data.success) {
-            window.alert("Something Went Wrong !!")
+            
+            if (data.success) {
+                window.alert("Grocery List Created Successfully !!")
+                navigate('/grocerylist')
+            }
+            window.mylist.push(window.grocery_list)
+                console.log(window.mylist)
+            }else{
+                window.alert("Please Select Some Items !!")
+            }
+        }else{
+            window.alert('Please Login First !!')
+            navigate("/login")
         }
-        
-        if (data.success) {
-            window.alert("Grocery List Created Successfully !!")
-            navigate('/grocerylist')
-        }
-        window.mylist.push(window.grocery_list)
-        console.log(window.mylist)
-    }else{
-        window.alert("Please Select Some Items !!")
-    }
         
 
     } 
@@ -91,7 +92,7 @@ function Home() {
 
     
     const loadData = async () =>{
-        let response = await fetch("http://localhost:5000/api/item_list",{
+        let response = await fetch("https://grocery-list-luu3.onrender.com/api/item_list",{
             method:"POST",
             headers:{
                 "Content-Type":'application/json'
