@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom';
-import Categories from '../Categories';
-import ItemsList from '../ItemsList';
+// import Categories from '../Categories';
+// import ItemsList from '../ItemsList';
 
 
 function Home() {
@@ -11,7 +11,7 @@ function Home() {
     const [search, setSearch]= useState('');
     const [category, setCategory] = useState('')
     // const [category_item,setCategory_Item]= useState([])
-    const [quantity, setQuantity] = useState('')
+    // const [quantity, setQuantity] = useState('')
     window.grocery_list=[]
     
 
