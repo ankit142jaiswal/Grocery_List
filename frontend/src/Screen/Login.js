@@ -29,6 +29,9 @@ function Login() {
       localStorage.setItem("userEmail", email);
       localStorage.setItem("authToken", data.authToken);
       console.log(localStorage.getItem("authToken"))
+      console.log(localStorage.getItem('userEmail'))
+      window.email = email
+      console.log(window.email)
       navigate("/");
     }
 

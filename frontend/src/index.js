@@ -7,9 +7,7 @@ import reportWebVitals from './reportWebVitals';
 window.grocery_list =[]
 window.categorised_item = []
 window.mylist = []
-
-
-
+window.login_email = ''
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

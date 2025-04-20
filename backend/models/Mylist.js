@@ -1,11 +1,10 @@
 const mongoose = require('mongoose')
 
 const MyListSchema = new mongoose.Schema({
-    // email : {
-    //     type : String,
-    //     // required : true,
-    //     unique : true
-    // },
+    email:{
+        type : String,
+        required : true
+    },
     order:{
         type: Array,
         required: true,
@@ -13,7 +12,7 @@ const MyListSchema = new mongoose.Schema({
     },
     date:{
         type : Date,
-        default: Date.nowgit 
+        default: Date.now
     }
 
 })

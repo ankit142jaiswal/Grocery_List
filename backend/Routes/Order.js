@@ -9,6 +9,7 @@ async ( req, resp)=>{
     try{
         console.log(req.body.order)
         await Mylist.create({
+            email: req.body.email,
             order: req.body.order
         })
         resp.json({success: true})
@@ -18,6 +19,8 @@ async ( req, resp)=>{
     }
 })
 module.exports = router;
+
+
 // let email = req.body.email;
 // let userData = await Mylist.findOne({email});
 // if (userData) {
