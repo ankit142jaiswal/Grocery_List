@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom';
-import { countDocuments } from '../../../backend/models/User';
 // import Categories from '../Categories';
 // import ItemsList from '../ItemsList';
 
@@ -26,10 +25,7 @@ function Home() {
         e.preventDefault()
         console.log(window.grocery_list)
         let order = window.grocery_list
-        console.log(window.login_email) 
-        let email = window.login_email
-        console.log(email)    
-        console.log(localStorage.getItem('userEmail'))     
+        let email = localStorage.getItem('userEmail')    
         // console.log(localStorage.getItem("authToken"))
         if (localStorage.getItem("authToken")){        
             if (order.length != 0){
