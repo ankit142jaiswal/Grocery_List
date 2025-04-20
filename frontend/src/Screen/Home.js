@@ -85,7 +85,7 @@ function Home() {
     
     const [item_list, setItem_List]= useState([])
     const [category_list, setCategory_List]= useState([]) 
-    // const [order_list, setOrder_list] = useState([])
+    const [order_list, setOrder_list] = useState([])
 
     const loadData = async () =>{
         if (localStorage.getItem("authToken")){
@@ -96,11 +96,11 @@ function Home() {
                 }
             })
             response  = await response.json();
-            console.log(response[0],response[1])
+            console.log(response[0],response[1],response[2])
             setItem_List(response[0])
             setCategory_List(response[1])
-            // setOrder_list(response[2])
-            // console.log(order_list)
+            setOrder_list(response[2])
+            console.log(order_list)
         }
     }
 
