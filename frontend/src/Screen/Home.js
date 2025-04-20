@@ -5,8 +5,6 @@ import { useNavigate } from 'react-router-dom';
 
 
 function Home() {
-    
-    
     const navigate = useNavigate()
     const [search, setSearch]= useState('');
     const [category, setCategory] = useState('')
@@ -14,7 +12,6 @@ function Home() {
     // const [quantity, setQuantity] = useState('')
     window.grocery_list=[]
     
-
     const selectCategory=(e)=>{
         let selected_category = document.getElementById('select_category').value
         setCategory(selected_category)
