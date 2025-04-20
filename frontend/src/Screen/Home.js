@@ -97,6 +97,8 @@ function Home() {
             })
             response  = await response.json();
             console.log(response[0],response[1],response[2])
+            global.myorder_list = response[2]
+            console.log(global.myorder_list)
             setItem_List(response[0])
             setCategory_List(response[1])
             setOrder_list(response[2])

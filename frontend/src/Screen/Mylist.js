@@ -3,7 +3,6 @@ import React, { useEffect, useState } from 'react';
 function Mylist() {
 
   const [order_list , setOrder_list] = useState([]);
-
       
   const loadData = async () =>{      
       let response = await fetch("https://grocery-list-luu3.onrender.com/api/item_list",{
@@ -13,7 +12,8 @@ function Mylist() {
           }
       })
       response  = await response.json();
-      window.Mylist = response[2]
+      window.mylist = response[2]
+      console.log(window.mylist)
       setOrder_list(response[2])
       console.log(order_list)
   }
@@ -31,8 +31,8 @@ function Mylist() {
       </div>
       <div className='container my-2 p-4 rounded' style={{boxShadow: "0 0 10px 5px rgba(0, 0, 0, 0.2)", fontWeight: "bold"}} >
           {
-            window.Mylist.length != 0 ? 
-            window.Mylist.map((items,index)=>{          
+            global.myorder_list.length != 0 ? 
+            global.myorder_list.map((items,index)=>{          
               return  (
                   <div className="btn col-12 m-1" style={{boxShadow: "0 0 10px 5px rgba(0, 0, 0, 0.2)", fontWeight: "bold"}}>
                     <div className='row'> 
