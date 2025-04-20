@@ -4,31 +4,46 @@ const mongoURI = 'mongodb://groofers:fRm1tuUwpaejYjxD@cluster1-shard-00-00.tsakd
 async function dbConnect() {
     await mongoose.connect(mongoURI).then(async()=>{
         console.log("Connected SuccessFully !!");
+
         const items_list = await mongoose.connection.db.collection('items_list');        
         await items_list.find({}).toArray().then(
-            async (data , err)=>{
-                const category_list = await mongoose.connection.db.collection('category_list');
-                await category_list.find({}).toArray().then(async (catData, err)=>{
-                    if (err){
-                        console.log(err); 
-                    }else{
-                        global.items_list = data;
-                        global.category_list = catData;
-                        // console.log(global.items_list)
-                        // console.log( global.category_list)
+            async (item_data , err)=>{
+                if (err){
+                    console.log(err); 
+                }else{
+                    global.items_list = item_data;
+                    // console.log(global.items_list)
+                }
+            }
+        )
+        
+        const category_list = await mongoose.connection.db.collection('category_list');
+        await category_list.find({}).toArray().then(
+            async (category_data, err)=>{
+                if (err){
+                    console.log(err); 
+                }else{
+                    global.category_list = category_data;
+                    // console.log( global.category_list)
+                    
+                }
+            }
+        )
+        
+        const order_list = await mongoose.connection.db.collection('mylists');
+        await order_list.find({}).toArray().then(
+            async (order_data ,err)=>{
+                if (err){
+                    console.log(err); 
+                }else{
+                    global.order_data = order_data;
+                    // console.log(global.order_data)
+                }
+            }
+        )
+    })
 
-                    }
-                });
-            // if (err){
-            //     console.log("---",err)
-            // }else{
-            //     global.items_list = data;
-            //     console.log()
-            // }
-     } )
-    }).catch((err)=>{
-        console.log("---",err);
-    });
+
 }
 
 module.exports = dbConnect();

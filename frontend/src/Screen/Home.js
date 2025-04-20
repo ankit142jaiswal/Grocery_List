@@ -83,11 +83,9 @@ function Home() {
        
     }
     
-    
     const [item_list, setItem_List]= useState([])
     const [category_list, setCategory_List]= useState([]) 
 
-    
     const loadData = async () =>{
         if (localStorage.getItem("authToken")){
             let response = await fetch("https://grocery-list-luu3.onrender.com/api/item_list",{

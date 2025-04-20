@@ -1,7 +1,27 @@
-import React from 'react'
-
+import React, { useEffect, useState } from 'react'
 export const Mylist = () => {
-          console.log(window.mylist)
+
+  const [order_list, setOrder_list] = useState([])
+      
+  const loadData = async () =>{
+      if (localStorage.getItem("authToken")){
+          let response = await fetch("https://grocery-list-luu3.onrender.com/api/item_list",{
+              method:"POST",
+              headers:{
+                  "Content-Type":'application/json'
+              }
+          })
+          response  = await response.json();
+          setOrder_list(response[2])
+          order_list.push({email: 'jsdbasjkdajsbd', order: [],date : Date()})
+          console.log(order_list)
+      }
+  }
+  useEffect(()=>{
+      loadData()
+  },[])
+
+  // console.log(window.mylist)
   return (
     <div>
       <div className='container my-2 p-4 rounded' style={{boxShadow: "0 0 10px 5px rgba(0, 0, 0, 0.2)", fontWeight: "bold"}} >
@@ -11,8 +31,8 @@ export const Mylist = () => {
       </div>
       <div className='container my-2 p-4 rounded' style={{boxShadow: "0 0 10px 5px rgba(0, 0, 0, 0.2)", fontWeight: "bold"}} >
           {
-            window.mylist != [] ? 
-            window.mylist.map((items,index)=>{          
+            order_list != [] ? 
+            order_list.map((items,index)=>{          
               return  (
                   <div className="btn col-12 m-1" style={{boxShadow: "0 0 10px 5px rgba(0, 0, 0, 0.2)", fontWeight: "bold"}}>
                     <div className='row'> 
@@ -20,9 +40,11 @@ export const Mylist = () => {
                         {index+1} 
                       </div>
                       <div className='col-10'>
-                        Order On : {Date()}
+                        {items.order}
                       </div>
-                    </div>  
+                    </div>
+                    <hr />  
+                    <div className='row'>Order on : {items.date}</div>
                   </div>
               )
             }):
