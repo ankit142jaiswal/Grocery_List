@@ -45,8 +45,8 @@ function Home() {
                 window.alert("Grocery List Created Successfully !!")
                 navigate('/grocerylist')
             }
-            window.mylist.push(window.grocery_list)
-            console.log(window.mylist)
+            // window.mylist.push(window.grocery_list)
+            // console.log(window.mylist)
             }else{
                 window.alert("Please Select Some Items !!")
             }
@@ -100,7 +100,6 @@ function Home() {
             setItem_List(response[0])
             setCategory_List(response[1])
             setOrder_list(response[2])
-            console.log(order_list)
         }
     }
 
