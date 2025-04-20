@@ -7,9 +7,6 @@ function Signup() {
     const [password, setPassword] = useState("");
     const [password1, setPassword1] = useState("");
 
-
-
-
     const navigate = useNavigate();
     const collectData = async (e) => {
         e.preventDefault();
@@ -31,9 +28,6 @@ function Signup() {
             window.alert("Signup Successfull !!")
              navigate('/login')
         }
-
-
-
     }
 
     return (

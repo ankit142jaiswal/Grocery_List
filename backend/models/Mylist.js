@@ -10,6 +10,10 @@ const MyListSchema = new mongoose.Schema({
         type: Array,
         required: true,
         default:[],
+    },
+    date:{
+        type : Date,
+        default: Date.nowgit 
     }
 
 })

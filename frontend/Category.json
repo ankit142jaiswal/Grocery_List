@@ -1,24 +1,22 @@
 {
     "category":[
-        {"category_name": "Fruit"},
-        {"category_name": "Vegetable"},
-        {"category_name": "Dairy"},
         {"category_name": "Meat"},
         {"category_name": "Seafood"},
-        {"category_name": "Grain"},
-        {"category_name": "Canned"},
-        {"category_name": "Packaged"},
-        {"category_name": "Baking"},
-        {"category_name": "Cooking"},
-        {"category_name": "Spice"},
-        {"category_name": "Frozen"},
-        {"category_name": "Snack"},
-        {"category_name": "Sweet"},
-        {"category_name": "Beverage"},
-        {"category_name": "Household"},
-        {"category_name": "Cleaning"},
-        {"category_name": "Personal Care"},
-        {"category_name": "Condiment"}
+        {"category_name": "Grains and Pulses"},
+        {"category_name": "Spices and Seasonings"},
+        {"category_name": "Oils and Fats"},
+        {"category_name": "Vegetables"},
+        {"category_name": "Fruits"},
+        {"category_name": "Dairy Products"},
+        {"category_name": "Beverages"},
+        {"category_name": "Snacks and Packaged"},
+        {"category_name": "Breads and Bakery"},
+        {"category_name": "Sweets and Desserts"},
+        {"category_name": "Condiments and Sauces"},
+        {"category_name": "Cleaning and Household"},
+        {"category_name": "Health and Personal Care"},
+        {"category_name": "Frozen Foods"},
+        {"category_name": "Miscellaneous"}       
       ]
     
 }

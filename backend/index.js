@@ -7,7 +7,6 @@ app.use(cors());
 
 const dbConnect = require('./mongodb');
 
-
 app.use(express.json());
 
 app.use((req,resp,next)=>{
@@ -26,9 +25,5 @@ app.use((req,resp,next)=>{
 app.use('/api', require("./Routes/CreateUser"))
 app.use('/api', require("./Routes/DisplayData"))
 app.use('/api', require("./Routes/Order"))
-
-
-
-
 
 app.listen(5000);

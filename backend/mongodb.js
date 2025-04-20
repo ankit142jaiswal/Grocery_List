@@ -19,7 +19,6 @@ async function dbConnect() {
 
                     }
                 });
-
             // if (err){
             //     console.log("---",err)
             // }else{
@@ -27,16 +26,9 @@ async function dbConnect() {
             //     console.log()
             // }
      } )
-       
-     
-        
-        
-       
     }).catch((err)=>{
         console.log("---",err);
     });
-
-    
 }
 
 module.exports = dbConnect();
