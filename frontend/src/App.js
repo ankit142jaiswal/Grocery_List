@@ -8,7 +8,7 @@ import Footer from './Components/Footer.js';
 import { Grocerylist } from './Screen/Grocerylist.js';
 import Login from './Screen/Login.js';
 import Signup from './Screen/Signup.js';
-import { Mylist } from './Screen/Mylist.js';
+import Mylist from './Screen/Mylist.js';
 function App() {
   return (
     <div >

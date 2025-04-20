@@ -36,8 +36,8 @@ async function dbConnect() {
                 if (err){
                     console.log(err); 
                 }else{
-                    global.order_data = order_data;
-                    // console.log(global.order_data)
+                    global.order_list = order_data;
+                    // console.log(global.order_list)
                 }
             }
         )
