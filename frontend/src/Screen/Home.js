@@ -25,13 +25,13 @@ function Home() {
         e.preventDefault()
         console.log(window.grocery_list)
         let order = window.grocery_list
-        let login_email = window.login_email
+        let email = window.login_email
         // console.log(localStorage.getItem("authToken"))
         if (localStorage.getItem("authToken")){        
             if (order.length != 0){
                 let result = await fetch("https://grocery-list-luu3.onrender.com/api/mylist", {
                 method: "POST",
-                body: JSON.stringify({login_email,order}),
+                body: JSON.stringify({email,order}),
                 headers: {
                     "Content-Type": "application/json"
                 }

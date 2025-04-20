@@ -8,6 +8,7 @@ router.post('/mylist',
 async ( req, resp)=>{
     try{
         console.log(req.body.order)
+        console.log(req.body.email)
         await Mylist.create({
             email: req.body.email,
             order: req.body.order
