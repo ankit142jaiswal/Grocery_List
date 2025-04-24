@@ -26,7 +26,7 @@ function Mylist() {
     <div>
       <div className='container my-2 p-4 rounded' style={{boxShadow: "0 0 10px 5px rgba(0, 0, 0, 0.2)", fontWeight: "bold"}} >
         <div className='row'> 
-        <h1 className=' text-center'>My List</h1><hr />
+        <h1 className=' text-center'>My List</h1><hr/>
         </div>  
       </div>
       <div className='container my-2 p-4 rounded' style={{boxShadow: "0 0 10px 5px rgba(0, 0, 0, 0.2)", fontWeight: "bold"}} >
@@ -35,8 +35,8 @@ function Mylist() {
             global.myorder_list.map((items,index)=>{          
               return  (
                   <div className="btn col-12 m-1" style={{boxShadow: "0 0 10px 5px rgba(0, 0, 0, 0.2)", fontWeight: "bold"}}>
-                    <div className='row'> 
-                      <div className='col-2'>
+                    {/* <div className='row'>  */}
+                      {/* <div className='col-2'>
                         {index+1} 
                       </div>
                       <div className='col-10'>
@@ -44,7 +44,7 @@ function Mylist() {
                       </div>
                     </div>
                     <hr />  
-                    <div className='row'>Order on : {items.date}</div>
+                    <div className='row'>Order on : {items.date}</div> */}
                   </div>
               )
             }):

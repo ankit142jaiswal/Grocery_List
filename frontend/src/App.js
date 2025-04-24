@@ -9,6 +9,7 @@ import { Grocerylist } from './Screen/Grocerylist.js';
 import Login from './Screen/Login.js';
 import Signup from './Screen/Signup.js';
 import Mylist from './Screen/Mylist.js';
+
 function App() {
   return (
     <div >
@@ -17,7 +18,7 @@ function App() {
         <Routes>
           <Route exact path='/' element={<Home/>}/>
           <Route exact path='/grocerylist' element={<Grocerylist/>}/>
-          <Route exact path='/mylist' element={<Mylist/>}/>          
+          <Route exact path='/mylist' element={<Mylist/>} />          
           <Route exact path='/login' element={<Login/>}/>
           <Route exact path='/signup'element={<Signup/>} />
         </Routes>
