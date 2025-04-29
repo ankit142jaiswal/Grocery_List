@@ -12,10 +12,8 @@ function Mylist() {
           }
       })
       response  = await response.json();
-      window.mylist = response[2]
-      console.log(window.mylist)
-      setOrder_list(response[2])
-      console.log(order_list)
+      global.myorder_list = response[2]
+      console.log(global.myorder_list)
   }
   useEffect(()=>{
       loadData()
@@ -35,16 +33,34 @@ function Mylist() {
             global.myorder_list.map((items,index)=>{          
               return  (
                   <div className="btn col-12 m-1" style={{boxShadow: "0 0 10px 5px rgba(0, 0, 0, 0.2)", fontWeight: "bold"}}>
-                    {/* <div className='row'>  */}
-                      {/* <div className='col-2'>
-                        {index+1} 
+                    <div className='row m-0'>
+                      Order placed at : {items.date.substring(0, 10) +", "+items.date.substring(12, 16) }
+                    </div>
+                    <hr />
+                    <div className='row'>
+                      <div className='col-1'>
+                        {index+1}.
                       </div>
-                      <div className='col-10'>
-                        {items.order}
+                      <div className='col-3'>
+                        {items.order[0].name}
+                      </div>
+                      <div className='col-2'>
+                        {items.order[0].category_name}
+                      </div>
+                      <div className='col-1'>
+                        {items.order[0].price}
+                      </div>
+                      <div className='col-1'>
+                        {items.order[0].quantity }
                       </div>
                     </div>
                     <hr />  
-                    <div className='row'>Order on : {items.date}</div> */}
+                    <div className='row'>
+                      <div className='col-auto'>
+                        {"Total Items : "+items.order.length}
+                      </div>
+                    </div>
+                    <hr />
                   </div>
               )
             }):

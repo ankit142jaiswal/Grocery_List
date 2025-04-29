@@ -40,7 +40,6 @@ export const Grocerylist = () => {
                 <h1 className='text-center' id='glh'></h1>
                 <hr />
             </div>
-            
                     <div className='col-2'>
                     <p>Sr.No.</p>
                     </div>
