@@ -26,7 +26,11 @@ function Signup() {
         }
         if (data.success){
             window.alert("Signup Successfull !!")
-             navigate('/login')
+            localStorage.setItem("userEmail", email);
+            localStorage.setItem("authToken", data.authToken);
+            console.log(localStorage.getItem("authToken"))
+            console.log(localStorage.getItem('userEmail'))
+            navigate("/");
         }
     }
 

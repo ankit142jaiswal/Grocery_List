@@ -12,8 +12,8 @@ function Mylist() {
           }
       })
       response  = await response.json();
-      global.myorder_list = response[2]
-      console.log(global.myorder_list)
+      console.log(response[2])
+     
   }
   useEffect(()=>{
       loadData()

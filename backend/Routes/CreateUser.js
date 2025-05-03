@@ -38,14 +38,21 @@ async ( req, resp)=>{
 
         }
         else {
-        await User.create({
-            name : req.body.name,
-            password: secPassword,
-            password1: secPassword1,
-            email: req.body.email
-        })
+            await User.create({
+                name : req.body.name,
+                password: secPassword,
+                password1: secPassword1,
+                email: req.body.email
+            })
+
+            const data = {
+                user:{
+                    email: req.body.email
+                }
+            }
+            const authToken = jwt.sign(data, jwtSecret)
+            return resp.json({success:true, authToken: authToken});
         }
-        resp.json({success: true})
     }catch (error){
         console.log(error)
         resp.json({success: false})
@@ -75,7 +82,7 @@ async( req, resp)=>{
         }else{
             const data = {
                 user:{
-                    id: userData.id
+                    email : req.body.email
                 }
             }
             const authToken = jwt.sign(data, jwtSecret)

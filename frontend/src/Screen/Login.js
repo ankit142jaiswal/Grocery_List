@@ -30,8 +30,6 @@ function Login() {
       localStorage.setItem("authToken", data.authToken);
       console.log(localStorage.getItem("authToken"))
       console.log(localStorage.getItem('userEmail'))
-      window.login_email = email
-      console.log(window.login_email)
       navigate("/");
     }
 
