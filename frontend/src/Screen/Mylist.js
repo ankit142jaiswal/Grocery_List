@@ -12,7 +12,7 @@ function Mylist() {
           }
       })
       response  = await response.json();
-      console.log(response[2])
+      setOrder_list(response[2])
      
   }
   useEffect(()=>{
@@ -29,8 +29,8 @@ function Mylist() {
       </div>
       <div className='container my-2 p-4 rounded' style={{boxShadow: "0 0 10px 5px rgba(0, 0, 0, 0.2)", fontWeight: "bold"}} >
           {
-            global.myorder_list.length != 0 ? 
-            global.myorder_list.map((items,index)=>{          
+            order_list.length != 0 ? 
+            order_list.map((items,index)=>{          
               return  (
                   <div className="btn col-12 m-1" style={{boxShadow: "0 0 10px 5px rgba(0, 0, 0, 0.2)", fontWeight: "bold"}}>
                     <div className='row m-0'>
@@ -64,7 +64,7 @@ function Mylist() {
                   </div>
               )
             }):
-            <div className='text-center'> No Previous Order</div>
+            <div className='text-center'> No Previous Order </div>
           }
       </div>
     </div>

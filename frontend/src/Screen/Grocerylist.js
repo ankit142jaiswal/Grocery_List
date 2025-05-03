@@ -7,9 +7,13 @@ export const Grocerylist = () => {
   const pdfRef = useRef()
 
   const downloadPDF = () =>{
-    document.getElementById('glh').innerHTML = 'Grocery List'
-    const input = pdfRef.current;
-    html2canvas(input).then((canvas)=>{
+
+    if (window.grocery_list.length == 0){
+        window.alert("Please Add Some Items !!")
+    }
+    else{
+        const input = pdfRef.current;
+        html2canvas(input).then((canvas)=>{
         const imgData = canvas.toDataURL('image/png');
         const pdf = new jsPDF('p', 'mm', 'a4', true);
         const pdfWidth = pdf.internal.pageSize.getWidth();
@@ -21,14 +25,16 @@ export const Grocerylist = () => {
         const imgY = 30;
         pdf.addImage(imgData, 'PNG', imgX, imgY, imgWidth * ratio, imgHeight * ratio);
         pdf.save('grocerylist');
-    });
+        });
+    window.alert('Grocery List Download Successfull !!')
+    }
   }
   return (
     <>
 
     <div className='container my-2 p-4 rounded'  ref={pdfRef}   style={{boxShadow: "0 0 10px 5px rgba(0, 0, 0, 0.2)", fontWeight: "bold"}} >
         <div className='row' >
-            <h1 className='text-center' >Grocery List</h1>               
+            {/* <h1 className='text-center' >Grocery List</h1>                */}
             <button className='btn btn-success ' onClick={downloadPDF}>DownLoad List</button>
         </div>
         <hr />
@@ -37,7 +43,7 @@ export const Grocerylist = () => {
         
         <div className='row'>
             <div className=''>
-                <h1 className='text-center' id='glh'></h1>
+                <h1 className='text-center' id='glh'>Grocery List</h1>
                 <hr />
             </div>
                     <div className='col-2'>
